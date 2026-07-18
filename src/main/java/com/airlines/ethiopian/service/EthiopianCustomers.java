@@ -5,6 +5,7 @@ import com.airlines.ethiopian.repository.CustomerRepository;
 import common.shared.dto.CustomerRequest;
 import common.shared.dto.CustomerResponse;
 import common.shared.utility.CustomerMapper;
+import common.shared.utility.CustomerStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -48,8 +49,11 @@ public class EthiopianCustomers implements Customers{
                 .toList();
     }
 
-    public List<CustomerResponse> findCustomersByStatus(String status) {
-        return repository.findCustomerByStatus(status)
+    public List<CustomerResponse> getCustomersByStatus(String status) {
+
+        CustomerStatus enumStatus = CustomerStatus.valueOf(status.toUpperCase());
+
+        return repository.findCustomerByStatus(enumStatus)
                 .stream()
                 .map(customerMapper::toResponse)
                 .toList();

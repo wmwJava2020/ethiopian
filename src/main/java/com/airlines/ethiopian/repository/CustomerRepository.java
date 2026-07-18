@@ -1,7 +1,7 @@
 package com.airlines.ethiopian.repository;
 
 import com.airlines.ethiopian.entity.Customer;
-import common.shared.dto.CustomerResponse;
+import common.shared.utility.CustomerStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -16,7 +16,7 @@ import java.util.List;
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
     List<Customer> findCustomerByDestination(String destination);
-    List<Customer> findCustomerByStatus(String status);
+    List<Customer> findCustomerByStatus(CustomerStatus status);
 
     @Query("""
     SELECT new common.shared.dto.CustomerResponse(
@@ -32,7 +32,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
     FROM Customer c
     WHERE c.status = :status
 """)
-    List<Customer> findByStatus(@Param("status") utility.CustomerStatus status);
+    List<Customer> findByStatus(@Param("status") CustomerStatus status);
 
     @Query("""
     SELECT new common.shared.dto.CustomerResponse(

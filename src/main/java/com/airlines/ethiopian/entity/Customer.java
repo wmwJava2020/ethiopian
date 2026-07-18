@@ -1,8 +1,9 @@
 package com.airlines.ethiopian.entity;
 
+import common.shared.utility.CustomerStatus;
 import jakarta.persistence.*;
 import lombok.Data;
-import utility.CustomerStatus;
+
 
 import java.util.Date;
 /**

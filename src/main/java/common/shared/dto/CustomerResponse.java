@@ -1,9 +1,9 @@
 package common.shared.dto;
 
+import common.shared.utility.CustomerStatus;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import utility.CustomerStatus;
 
 import java.util.Date;
 

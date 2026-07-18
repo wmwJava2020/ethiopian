@@ -5,6 +5,7 @@ import com.airlines.ethiopian.service.Customers;
 import com.airlines.ethiopian.service.EthiopianCustomers;
 import common.shared.dto.CustomerRequest;
 import common.shared.dto.CustomerResponse;
+import common.shared.utility.CustomerStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,7 +42,8 @@ public class EthiopianCustomerController {
 
     @GetMapping("/get/customer/status")
     public ResponseEntity<List<CustomerResponse>> getByStatus(@RequestParam String status) {
-        return ResponseEntity.ok(customers.findCustomersByStatus(status));
+        return ResponseEntity.ok(customers.getCustomersByStatus(status));
     }
+
 
 }
