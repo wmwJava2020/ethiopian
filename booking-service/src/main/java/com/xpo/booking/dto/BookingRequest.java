@@ -1,24 +1,21 @@
-package common.shared.dto;
+package com.xpo.booking.dto;
 
+import jakarta.persistence.Column;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * Author: Wondafrash
- * Date: 7/18/2026
- * Time: 2:46 PM
+ * Date: 7/20/2026
+ * Time: 12:47 PM
  */
-@Getter
-@Setter
-public class CustomerRequest {
+
+@Data
+public class BookingRequest {
 
     private String firstName;
     private String lastName;
     private String email;
     private String phoneNumber;
-    private String destination;
     private String source;
-
-
+    private String destination;
 }

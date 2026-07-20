@@ -8,9 +8,8 @@ import common.shared.utility.CustomerMapper;
 import common.shared.utility.CustomerStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 
 /**
@@ -40,6 +39,11 @@ public class EthiopianCustomers implements Customers{
         CustomerResponse response = customerMapper.toResponse(saved);
 
         return ResponseEntity.ok(response);
+    }
+
+    @Override
+    public Optional<Customer> getCustomerByEmail(String email) {
+        return repository.findCustomerByEmail(email);
     }
 
     public List<CustomerResponse> findCustomersByDestination(String destination) {

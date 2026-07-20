@@ -20,9 +20,11 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long custId;
 
-    private String custName;
-    private String custEmail;
-    private String custPhone;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String phoneNumber;
+    private String source;
     private String destination;
 
     @Enumerated(EnumType.STRING)
@@ -39,4 +41,5 @@ public class Customer {
             this.status = CustomerStatus.ECONOMY; // pick your default tier
         }
     }
+
 }
