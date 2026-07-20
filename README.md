@@ -1,9 +1,9 @@
 postman request POST 'http://localhost:1940/api/v0/ethiopian/save/customer' \
 --header 'Content-Type: application/json' \
 --body '{
-"firstName":   "Beakal",
-"lastName":    "Messele",
-"email":       "beakal@beakal.com",
+"firstName":   "Williy",
+"lastName":    "Milli",
+"email":       "williy@willy.com",
 "phoneNumber": "702-456-7890",
 "source":      "ADD",
 "destination": "DFW"
@@ -13,9 +13,9 @@ postman request POST 'http://localhost:1940/api/v0/ethiopian/save/customer' \
 ############# response ##############
 {
 "custId": 4,
-"firstName": "Beakal",
-"lastName": "Messele",
-"email": "beakal@beakal.com",
+"firstName": "Williy",
+"lastName": "Milli",
+"email": "williy@willy.com",
 "phoneNumber": "702-456-7890",
 "destination": "DFW",
 "source": "ADD",
