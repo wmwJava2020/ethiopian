@@ -8,7 +8,8 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = {
 		"com.xpo.booking",
 		"com.airlines.ethiopian",
-		"common.shared.utility"
+		"common.shared.utility",
+		"com.xpo.booking.utility"
 })public class EthiopianApplication {
 
 	public static void main(String[] args) {

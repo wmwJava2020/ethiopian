@@ -2,6 +2,7 @@ package com.xpo.booking.service;
 
 import com.airlines.ethiopian.service.FlightCustomerModule;
 import com.xpo.booking.entity.Booking;
+import com.xpo.booking.utility.BookingMapper;
 import com.xpo.booking.dto.BookingRequest;
 import com.xpo.booking.dto.BookingResponse;
 import com.xpo.booking.repository.BookingRepository;
@@ -19,11 +20,13 @@ public class BookingServiceImpl implements BookingService {
 
     private final BookingRepository    bookingRepository;
     private final FlightCustomerModule flightCustomerModule;
+    private final BookingMapper      bookingMapper;
 
     public BookingServiceImpl(BookingRepository bookingRepository,
-                              FlightCustomerModule flightCustomerModule) {
+                              FlightCustomerModule flightCustomerModule, BookingMapper bookingMapper) {
         this.bookingRepository    = bookingRepository;
         this.flightCustomerModule = flightCustomerModule;
+        this.bookingMapper = bookingMapper;
     }
 
     @Override
@@ -43,13 +46,18 @@ public class BookingServiceImpl implements BookingService {
             throw new BookingException("Customer not found: " + e.getMessage());
         }
 
-        System.out.println("Customer returned: " + customer);
         if (customer == null) {
             throw new BookingException("Customer lookup returned null for email: " + request.getEmail());
         }
-        System.out.println("FirstName: " + customer.getFirstName());
-        System.out.println("LastName:  " + customer.getLastName());
 
+        // Mapper Interface Implementations
+        Booking booking = bookingMapper.toBooking(request);
+
+        Booking savedBooking = bookingRepository.save(booking);
+
+        return bookingMapper.toBookingResponse(savedBooking);
+
+        /*
         Booking booking = new Booking();
         booking.setFirstName(customer.getFirstName());
         booking.setLastName(customer.getLastName());
@@ -87,6 +95,8 @@ public class BookingServiceImpl implements BookingService {
         }
 
         return response;
+
+         */
     }
 
     private void validateRequest(BookingRequest request) throws BookingException {
