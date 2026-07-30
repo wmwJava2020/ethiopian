@@ -3,8 +3,7 @@ package com.xpo.booking.utility;
 import com.xpo.booking.dto.BookingRequest;
 import com.xpo.booking.dto.BookingResponse;
 import com.xpo.booking.entity.Booking;
-<<<<<<< HEAD
-import common.shared.dto.CustomerResponse;
+import common.shared.data.dto.CustomerResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
@@ -12,12 +11,7 @@ import org.mapstruct.Mapping;
  * Author: Wondafrash
  * Date: 7/30/2026
  *
- * MapStruct mapper combining two sources into one Booking entity:
- *   - BookingRequest  → email, phoneNumber, source, destination
- *   - CustomerResponse → firstName, lastName  (from Customer module)
- *
- * bookingId and createdAt are set by @PrePersist — ignored here.
- * status is set manually in the default method.
+
  */
 @Mapper(componentModel = "spring")
 public interface BookingMapper {
@@ -49,8 +43,7 @@ public interface BookingMapper {
         booking.setLastName(customer.getLastName());
         return booking;
     }
-=======
-import org.mapstruct.Mapper;
+
 
 @Mapper(componentModel = "spring")
 public interface BookingMapper {
@@ -59,7 +52,7 @@ public interface BookingMapper {
     Booking toBooking(BookingRequest bookingRequest);
 
     //Entity -> Response: all fields match by name, so this is fully automatic
-    BookingResponse  toBookingResponse(Booking booking);
+    BookingResponse toBookingResponse(Booking booking);
 
->>>>>>> cae5ba3932e3961fe7bc98d39ae58878f7aaccd9
+}
 }

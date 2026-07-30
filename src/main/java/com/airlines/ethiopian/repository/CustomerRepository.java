@@ -1,8 +1,8 @@
 package com.airlines.ethiopian.repository;
 
 import com.airlines.ethiopian.entity.Customer;
-import common.shared.dto.CustomerResponse;
-import common.shared.utility.CustomerStatus;
+import common.shared.data.dto.CustomerResponse;
+import common.shared.data.utility.CustomerStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -26,14 +26,16 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
     // ✅ Returns Optional<CustomerResponse> via JPQL constructor expression
     @Query("""
-        SELECT new common.shared.dto.CustomerResponse(
+        SELECT new common.shared.data.dto.CustomerResponse(
             c.custId, c.firstName, c.lastName, c.email,
             c.phoneNumber, c.destination, c.source,
             c.status, c.registeredDate, c.pin
         )
         FROM Customer c WHERE c.email = :email
     """)
-    Optional<CustomerResponse> findByEmail(@Param("email") String email);
+
+    Optional<Customer> findByEmail(@Param("email") String email);
+
     /*
     List<Customer> findCustomerByDestination(String destination);
     List<Customer> findCustomerByStatus(CustomerStatus status);

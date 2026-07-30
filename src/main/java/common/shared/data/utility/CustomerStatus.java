@@ -1,4 +1,4 @@
-package common.shared.utility;
+package common.shared.data.utility;
 
 public enum CustomerStatus {
     PRIORITY,

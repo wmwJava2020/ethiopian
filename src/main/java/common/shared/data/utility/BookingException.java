@@ -1,4 +1,4 @@
-package common.shared.utility;
+package common.shared.data.utility;
 
 /**
  * Author: Wondafrash
@@ -12,6 +12,6 @@ public class BookingException extends Exception
     private static final long serialVersionUID = 1L;
 
     public BookingException(String message) {
-        super(message);    // ← add this
+        super(message);
     }
 }

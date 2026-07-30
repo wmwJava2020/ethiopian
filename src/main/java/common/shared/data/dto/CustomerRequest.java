@@ -1,4 +1,4 @@
-package common.shared.dto;
+package common.shared.data.dto;
 
 import lombok.Data;
 import lombok.Getter;

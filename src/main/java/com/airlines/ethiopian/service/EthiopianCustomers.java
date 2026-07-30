@@ -2,10 +2,10 @@ package com.airlines.ethiopian.service;
 
 import com.airlines.ethiopian.entity.Customer;
 import com.airlines.ethiopian.repository.CustomerRepository;
-import common.shared.dto.CustomerRequest;
-import common.shared.dto.CustomerResponse;
-import common.shared.utility.CustomerMapper;
-import common.shared.utility.CustomerStatus;
+import common.shared.data.dto.CustomerRequest;
+import common.shared.data.dto.CustomerResponse;
+import common.shared.data.utility.CustomerMapper;
+import common.shared.data.utility.CustomerStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -18,7 +18,7 @@ import java.util.Optional;
  * Time: 2:20 PM
  */
 @Service
-public class EthiopianCustomers implements Customers{
+public class EthiopianCustomers implements Customers {
 
     private final CustomerRepository repository;
     private final CustomerMapper customerMapper;
@@ -30,7 +30,7 @@ public class EthiopianCustomers implements Customers{
     }
 
 
-    public ResponseEntity<CustomerResponse> saveCustomer(CustomerRequest request) {
+    public ResponseEntity<Customer> saveCustomer(CustomerRequest request) {
 
         Customer customer = customerMapper.toEntity(request);
 
@@ -38,7 +38,7 @@ public class EthiopianCustomers implements Customers{
 
         CustomerResponse response = customerMapper.toResponse(saved);
 
-        return ResponseEntity.ok(response);
+        return (ResponseEntity<Customer>) ResponseEntity.ok();
     }
 
     @Override

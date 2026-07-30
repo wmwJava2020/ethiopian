@@ -14,11 +14,7 @@ import java.util.List;
 /**
  * Author: Wondafrash
  * Date: 7/30/2026
- *
- * POST   /api/v1/tickets/issue              → issue new ticket
- * GET    /api/v1/tickets/{ticketId}          → get by ticket number
- * GET    /api/v1/tickets/passenger/{email}   → get all for passenger
- * DELETE /api/v1/tickets/{ticketId}/cancel   → cancel ticket
+
  */
 @Slf4j
 @RestController

@@ -1,6 +1,6 @@
 package com.airlines.ethiopian.entity;
 
-import common.shared.utility.CustomerStatus;
+import common.shared.data.utility.CustomerStatus;
 import jakarta.persistence.*;
 import lombok.Data;
 

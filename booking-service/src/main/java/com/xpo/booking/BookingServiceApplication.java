@@ -1,4 +1,4 @@
-package com.xpo.booking;
+package src.main.java.com.xpo.booking;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

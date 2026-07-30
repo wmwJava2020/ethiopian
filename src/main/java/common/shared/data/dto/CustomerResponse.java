@@ -1,6 +1,6 @@
-package common.shared.dto;
+package common.shared.data.dto;
 
-import common.shared.utility.CustomerStatus;
+import common.shared.data.utility.CustomerStatus;
 import lombok.Getter;
 import lombok.Setter;
 

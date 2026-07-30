@@ -1,8 +1,8 @@
-package common.shared.utility;
+package common.shared.data.utility;
 
 import com.airlines.ethiopian.entity.Customer;
-import common.shared.dto.CustomerRequest;
-import common.shared.dto.CustomerResponse;
+import common.shared.data.dto.CustomerRequest;
+import common.shared.data.dto.CustomerResponse;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

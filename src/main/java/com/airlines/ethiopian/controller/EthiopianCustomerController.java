@@ -1,15 +1,12 @@
 package com.airlines.ethiopian.controller;
 
 import com.airlines.ethiopian.entity.Customer;
-import com.airlines.ethiopian.service.Customers;
 import com.airlines.ethiopian.service.EthiopianCustomers;
-import common.shared.dto.CustomerRequest;
-import common.shared.dto.CustomerResponse;
-import common.shared.utility.CustomerStatus;
+import common.shared.data.dto.CustomerRequest;
+import common.shared.data.dto.CustomerResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
 import java.util.List;
 
 
@@ -30,7 +27,7 @@ public class EthiopianCustomerController {
     }
 
     @PostMapping("/save/customer")
-    public ResponseEntity<CustomerResponse> customersSaved(@RequestBody CustomerRequest request) {
+    public ResponseEntity<Customer> customersSaved(@RequestBody CustomerRequest request) {
         System.out.println("Received: " + request.toString()); // needs toString from @Data — it's there since you have @Data
         return customers.saveCustomer(request);
     }

@@ -2,9 +2,10 @@ package com.airlines.ethiopian.service;
 
 import com.airlines.ethiopian.entity.Customer;
 import com.airlines.ethiopian.repository.CustomerRepository;
-import common.shared.dto.CustomerResponse;
-import common.shared.utility.BookingException;
-import common.shared.utility.CustomerMapper;
+import common.shared.data.dto.CustomerResponse;
+import common.shared.data.utility.BookingException;
+import common.shared.data.utility.CustomerMapper;
+import com.airlines.ethiopian.service.FlightCustomerModule;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Primary
-public class EthiopianCustomerModule implements FlightCustomerModule{
+public class EthiopianCustomerModule implements FlightCustomerModule {
 
     private final CustomerRepository customerRepository;
     private final CustomerMapper     customerMapper;
