@@ -3,6 +3,7 @@ package com.xpo.booking.utility;
 import com.xpo.booking.dto.BookingRequest;
 import com.xpo.booking.dto.BookingResponse;
 import com.xpo.booking.entity.Booking;
+<<<<<<< HEAD
 import common.shared.dto.CustomerResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -48,4 +49,17 @@ public interface BookingMapper {
         booking.setLastName(customer.getLastName());
         return booking;
     }
+=======
+import org.mapstruct.Mapper;
+
+@Mapper(componentModel = "spring")
+public interface BookingMapper {
+
+    //Request -> Entity: pin and registeredDate are set by @PrePersist, not from the request
+    Booking toBooking(BookingRequest bookingRequest);
+
+    //Entity -> Response: all fields match by name, so this is fully automatic
+    BookingResponse  toBookingResponse(Booking booking);
+
+>>>>>>> cae5ba3932e3961fe7bc98d39ae58878f7aaccd9
 }

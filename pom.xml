@@ -97,9 +97,12 @@
 							<version>${mapstruct.version}</version>
 						</path>
 					</annotationProcessorPaths>
+<<<<<<< HEAD
 					<source>17</source>
 					<target>17</target>
 					
+=======
+>>>>>>> cae5ba3932e3961fe7bc98d39ae58878f7aaccd9
 				</configuration>
 			</plugin>
 

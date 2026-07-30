@@ -46,7 +46,11 @@ postman request POST 'http://localhost:1941/api/v0/flight/booking/confirm/' \
 "destination": "DFW"
 }
 
+<<<<<<< HEAD
 GET ####### where destination=DFW
+=======
+GET ####### where destinnation=DFW
+>>>>>>> cae5ba3932e3961fe7bc98d39ae58878f7aaccd9
 postman request 'http://localhost:1940/api/v0/ethiopian/get/customer/destination?location=DFW' \
 --body ''
 
